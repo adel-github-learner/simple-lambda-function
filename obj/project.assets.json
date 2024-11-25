@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "Amazon.Lambda.Core/2.4.0": {
+      "Amazon.Lambda.Core/2.5.0": {
         "type": "package",
         "compile": {
           "lib/net8.0/Amazon.Lambda.Core.dll": {
@@ -15,10 +15,11 @@
           }
         }
       },
-      "Amazon.Lambda.RuntimeSupport/1.11.0": {
+      "Amazon.Lambda.RuntimeSupport/1.12.0": {
         "type": "package",
         "dependencies": {
-          "Amazon.Lambda.Core": "2.3.0"
+          "Amazon.Lambda.Core": "2.5.0",
+          "SnapshotRestore.Registry": "1.0.0"
         },
         "compile": {
           "lib/net8.0/Amazon.Lambda.RuntimeSupport.dll": {
@@ -46,19 +47,28 @@
             "related": ".xml"
           }
         }
+      },
+      "SnapshotRestore.Registry/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/SnapshotRestore.Registry.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/SnapshotRestore.Registry.dll": {}
+        }
       }
     }
   },
   "libraries": {
-    "Amazon.Lambda.Core/2.4.0": {
-      "sha512": "5gu/BV6rq+Hg5nMHMcfuKhdYf+xmhqpJkNzLpXkeh7JsOu46jvKD+E6M+ywRsS7XBDvoDEYUsAeoqCN8n7onBw==",
+    "Amazon.Lambda.Core/2.5.0": {
+      "sha512": "JrDdnjUPFcZ74VDjVc2kMucyUpjHnN77Al9Owc17DYYFYAVav46fLRl1BlJj0UPhJxTakoB/h1PhU/6J005Qrw==",
       "type": "package",
-      "path": "amazon.lambda.core/2.4.0",
+      "path": "amazon.lambda.core/2.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "amazon.lambda.core.2.4.0.nupkg.sha512",
+        "amazon.lambda.core.2.5.0.nupkg.sha512",
         "amazon.lambda.core.nuspec",
         "lib/net6.0/Amazon.Lambda.Core.dll",
         "lib/net6.0/Amazon.Lambda.Core.xml",
@@ -68,15 +78,15 @@
         "lib/netstandard2.0/Amazon.Lambda.Core.xml"
       ]
     },
-    "Amazon.Lambda.RuntimeSupport/1.11.0": {
-      "sha512": "pdqx07ynFABzanPmTEGvhnvkldTrJc6PmRXDC+dkhb8jVQTn77SkiWYcpEuDSE3vbuJJK5UTQlIn19S/gfaBTQ==",
+    "Amazon.Lambda.RuntimeSupport/1.12.0": {
+      "sha512": "bmLjqPi2+qyNk1Lt958iE0rAccLNUp2ZDBQ5V6clGtVkLcV/Jr27mJu8mNoSsvwlrRTABLbfIkydc6aTlULq/A==",
       "type": "package",
-      "path": "amazon.lambda.runtimesupport/1.11.0",
+      "path": "amazon.lambda.runtimesupport/1.12.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "README.md",
-        "amazon.lambda.runtimesupport.1.11.0.nupkg.sha512",
+        "amazon.lambda.runtimesupport.1.12.0.nupkg.sha512",
         "amazon.lambda.runtimesupport.nuspec",
         "lib/net5.0/Amazon.Lambda.RuntimeSupport.dll",
         "lib/net5.0/Amazon.Lambda.RuntimeSupport.xml",
@@ -105,12 +115,25 @@
         "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll",
         "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.xml"
       ]
+    },
+    "SnapshotRestore.Registry/1.0.0": {
+      "sha512": "/XOtWCRU9u1am17f0EDZbBlnAsbC2HE7CWGxWYbvbAyAeJQI2sl8gEubbC1hLMWco7sN3UiTFudI4+FUiuDi0A==",
+      "type": "package",
+      "path": "snapshotrestore.registry/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net8.0/SnapshotRestore.Registry.dll",
+        "snapshotrestore.registry.1.0.0.nupkg.sha512",
+        "snapshotrestore.registry.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Amazon.Lambda.Core >= 2.4.0",
-      "Amazon.Lambda.RuntimeSupport >= 1.11.0",
+      "Amazon.Lambda.Core >= 2.5.0",
+      "Amazon.Lambda.RuntimeSupport >= 1.12.0",
       "Amazon.Lambda.Serialization.SystemTextJson >= 2.4.4"
     ]
   },
@@ -166,11 +189,11 @@
         "dependencies": {
           "Amazon.Lambda.Core": {
             "target": "Package",
-            "version": "[2.4.0, )"
+            "version": "[2.5.0, )"
           },
           "Amazon.Lambda.RuntimeSupport": {
             "target": "Package",
-            "version": "[1.11.0, )"
+            "version": "[1.12.0, )"
           },
           "Amazon.Lambda.Serialization.SystemTextJson": {
             "target": "Package",
